@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/DBConn');
 const userRouter = require('./routes/users')
 const authRouter = require('./routes/auth')
+const postRouter = require('./routes/post')
 const app = express();
 dotenv.config();
 // middleware
@@ -20,6 +21,7 @@ const PORT = process.env.PORT || 3500;
 app.use('/users',userRouter);
 app.use('/auth',authRouter);
 
+app.use('/posts',postRouter);
 
 
 mongoose.connection.once('open',()=>{
