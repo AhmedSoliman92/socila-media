@@ -35,6 +35,22 @@ const userSchema = new Schema({
         type:Array,
         default:[]
     },
+    desc:{
+        type:String,
+        max:50
+    },
+    city:{
+        type:String,
+        max: 50
+    },
+    from:{
+        type:String,
+        max: 50
+    },
+    relationship: {
+        type: Number,
+        enum:[1,2,3]
+    },
     isAdmin: {
         type:Boolean,
         default:false
